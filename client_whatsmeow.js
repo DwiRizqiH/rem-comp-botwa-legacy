@@ -14812,7 +14812,7 @@ Fungsi : Guild Command List
                 })
 
                 let imagePathFloor = `./media/img/rpg/floor/${floorDbSl.image}`
-                if(!fs.existsSync(imagePathFloor)) imagePathFloor = './media/img/404_not_found.gif'
+                if(!fs.existsSync(imagePathFloor)) imagePathFloor = './media/img/404_not_found.jpg'
                 rem.sendFileAuto(from, imagePathFloor, '', lantaiText, messageRaw, { gifPlayback: true })
             }
             break
