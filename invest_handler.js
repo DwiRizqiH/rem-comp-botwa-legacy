@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const mongoose = require('mongoose');
 mongoose.pluralize(null);
 mongoose.connect(process.env.MONGODB_PRODUCTION_URI)
