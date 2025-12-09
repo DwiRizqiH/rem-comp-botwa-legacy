@@ -55,31 +55,31 @@ pm2.connect(async (error) => {
         }
     })
 
-    for(let i = 0; i < 5; i++) {
-        console.log('starting', i + 1)
-        pm2.start({
-            script: 'jadibot.js',
-            name: 'jadibot' + (i + 1),
-            // instances : "max",
-            max_memory_restart: '3072M',
-            //restart_delay: 3000,
-            node_args: `--max-old-space-size=10384`,
-            args: `--key=OIBARPOINAIWRH9QONWI097124AOIHWFO --server=${i + 1} --serverPort=${[9027, 7027, 5027, 3027, 1027, 1127, 2027, 4027, 6027, 8027][i]}`,
-            shutdown_with_message: true,
-            kill_timeout: 10000,
-            cron_restart: '*/60 * * * *',
-            // "out_file": "/dev/null",
-            // "error_file": "/dev/null",
-            env: {
-                LD_PRELOAD: '/usr/lib/aarch64-linux-gnu/libjemalloc.so'
-            }
-        }, (error, apps) => {
-            pm2.disconnect()
-            if (error) {
-                console.error(error)
-            }
-        })
-    }
+    // for(let i = 0; i < 5; i++) {
+    //     console.log('starting', i + 1)
+    //     pm2.start({
+    //         script: 'jadibot.js',
+    //         name: 'jadibot' + (i + 1),
+    //         // instances : "max",
+    //         max_memory_restart: '3072M',
+    //         //restart_delay: 3000,
+    //         node_args: `--max-old-space-size=10384`,
+    //         args: `--key=OIBARPOINAIWRH9QONWI097124AOIHWFO --server=${i + 1} --serverPort=${[9027, 7027, 5027, 3027, 1027, 1127, 2027, 4027, 6027, 8027][i]}`,
+    //         shutdown_with_message: true,
+    //         kill_timeout: 10000,
+    //         cron_restart: '*/60 * * * *',
+    //         // "out_file": "/dev/null",
+    //         // "error_file": "/dev/null",
+    //         env: {
+    //             LD_PRELOAD: '/usr/lib/aarch64-linux-gnu/libjemalloc.so'
+    //         }
+    //     }, (error, apps) => {
+    //         pm2.disconnect()
+    //         if (error) {
+    //             console.error(error)
+    //         }
+    //     })
+    // }
 
     pm2.start({
         script: 'puppeteer.js',
