@@ -12058,7 +12058,7 @@ _${urlPathImageTempSetPdPp}_`
                 }
             }
             break
-        case prefix+'point':
+        /** case prefix+'point':
         case prefix+'p':
             // if (!isSideOwner) return reply(from, 'Err: 403!')
             if(args.length === 1) {
@@ -12139,7 +12139,7 @@ _${urlPathImageTempSetPdPp}_`
                     return reply(from, 'Invalid!', id)
                 }
             }
-            break
+            break **/
         // Kegunaan Afinitas Saudara
         case prefix+'pullmoney':
         case prefix+'pullm':
